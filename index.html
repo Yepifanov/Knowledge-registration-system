@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Knowledge registration system</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/normalize.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="scripts/jquery-3.2.1.js"></script>
+    <script src="scripts/jquery.raty.js"></script>
+    <script src="scripts/script.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJ5gSPsc68QnL-ilN9UGjhf9kzHhjebf8&callback=initMap"></script>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <ul id="slides">
+            <li class="slide showing"></li>
+            <li class="slide"></li>
+            <li class="slide"></li>
+        </ul>
+    </div>
+
+    <nav id="top" class="navigation">
+        <ul id="nav1" class="menu-list">
+            <li class="menu-list__item">Skills
+                <ul class="menu-list__dropdown">
+                    <li class="menu-list__submenu" id="allSkills">All skills</li>
+                    <li class="menu-list__submenu" id="mySkills">My skills</li>
+                </ul>
+            </li>
+
+            <li class="menu-list__item"><a class="menu-list__link" href="#contacts">Contacts</a>
+            </li>
+
+            <li class="menu-list__item"><a class="menu-list__link" href="#about__header">About</a>
+            </li>
+
+            <li class="menu-list__item">
+                <label for="search"></label>
+                <input class="menu-list__search-input" type="search" name="search" id="search" placeholder="&#128270; Search" autocomplete="off"/>
+            </li>
+        </ul>
+    </nav>
+    <h1>Knowledge registration system</h1>
+    <div>
+        <ul class="view" id="view"><!--View:-->
+            <li><span id="tile">Tile</span></li>
+            <li><span id="list">List</span></li>
+        </ul>
+    </div>
+</header>
+
+
+<article id="article" class="left-menu">
+
+    <h2 class="criteria">Selection by criteria</h2>
+
+    <div class="wrap">
+
+        <div>
+            <h3 class="criteria__name">Direction</h3>
+            <label for="frontend"><input class="category__name filtration allCheck" type="checkbox" name="frontend" id="frontend" value="frontend" checked/>Front-End</label>
+            <label for="backend"><input class="category__name filtration allCheck" type="checkbox" name="backend" id="backend" value="backend" checked/>Back-End</label>
+            <label for="database"><input class="category__name filtration allCheck" type="checkbox" name="database" id="database" value="database" checked/>Database</label>
+        </div>
+
+        <div>
+            <h3 class="criteria__name">Difficulty</h3>
+            <label for="easy"><input class="difficulty_level filtration" type="radio" name="level" id="easy"
+                                    value="easy"/>1-4</label>
+            <label for="normal"> <input class="difficulty_level filtration" type="radio" name="level" id="normal"
+                                        value="normal"/>5-7</label>
+            <label for="hard"><input class="difficulty_level filtration" type="radio" name="level" id="hard"
+                                     value="hard"/>8-10</label>
+            <label for="all"><input class="difficulty_level filtration allCheck" type="radio" name="level" id="all" value="all" checked/>All</label>
+        </div>
+        <div>
+
+            <h3 class="criteria__name">Level</h3>
+            <label for="onestar"><input class="filtration" type="radio" name="starRating" id="onestar" value="1"/><img src="img/star.png" alt="onestar" title="Beginner"/></label>
+            <label for="twostars"><input class="filtration" type="radio" name="starRating" id="twostars" value="2"/><img src="img/star2.png" alt="twostars" title="Intermediate"/></label>
+            <label for="threestars"><input class="filtration" type="radio" name="starRating" id="threestars" value="3"/><img src="img/star3.png" alt="threestars" title="Advanced"/></label>
+            <label for="fourstars"><input class="filtration" type="radio" name="starRating" id="fourstars" value="4"/><img src="img/star4.png" alt="fourstars" title="Expert"/></label>
+            <label for="fivestars"><input class="filtration" type="radio" name="starRating" id="fivestars" value="5"/><img src="img/star5.png" alt="fivestars" title="Godlike"/></label>
+            <label for="anyLevel"><input class="filtration allCheck" type="radio" name="starRating" id="anyLevel" value="any" checked/>Any level</label>
+        </div>
+
+        <div>
+            <h3 class="criteria__name">Popularity</h3>
+            <label for="pop-low"><input class="filtration" type="radio" name="popularity" id="pop-low" value="low"/>Low</label>
+            <label for="pop-medium"> <input class="filtration" type="radio" name="popularity" id="pop-medium" value="medium"/>Medium</label>
+            <label for="pop-high"><input class="filtration" type="radio" name="popularity" id="pop-high" value="high"/>High</label>
+            <label for="pop-all"><input class="filtration allCheck" type="radio" name="popularity" id="pop-all" value="all" checked/>All</label>
+        </div>
+
+        <div>
+            <h3 class="criteria__name">Year of establishment</h3>
+            <label for="1"><input class="filtration" type="radio" name="year" id="1" value="70"/>1970-1980</label>
+            <label for="2"> <input class="filtration" type="radio" name="year" id="2" value="80"/>1981-1990</label>
+            <label for="3"><input class="filtration" type="radio" name="year" id="3" value="90"/>1991-2000</label>
+            <label for="4"><input class="filtration" type="radio" name="year" id="4" value="00"/>2001-2017</label>
+            <label for="allyears"><input class="filtration allCheck" type="radio" name="year" id="allyears" value="allyears" checked/>All</label>
+        </div>
+    </div>
+</article>
+
+<main class="main">
+    <div class="main-wrap" id="wrapper">
+
+    </div>
+</main>
+
+<section class="contacts">
+
+    <h2 id="contacts" class="contacts__header">Contacts</h2>
+    <h3>Stay in touch!</h3>
+    <p>If you have any questions, please, feel free contact us:</p>
+
+    <div class="contacts__info">
+        <a href="mailto:epifanov.gena@gmail.com?subject=Knowledge registration system">
+            <img src="img/icon_mail.png" alt="mail_icon" title="Click to send mail"/></a><span class="contacts__text">epifanov.gena@gmail.com</span><br/>
+
+        <a href="tel:+38(063)4608325">
+            <img src="img/icon_tel.png" alt="tel_icon" title="Click to call"/></a><span class="contacts__text">+38(063)460-83-25</span>
+    </div>
+
+    <p class="contacts__map-description">We always glad to see you in our office,<br/>which is situated in Lyatoshynskogo street 8, Kyiv, Ukraine:</p>
+
+    <div id="map">
+    </div>
+
+</section>
+
+
+<section class="about">
+    <h2 class="about__header" id="about__header">About</h2>
+    <p class="about__info">The knowledge registration system is a system that allows programmers to indicate their level of proficiency in various areas, with the possibility of sorting and filtering. Used for further selection of specialists by the manager.</p>
+    <div class="about__description">
+        <h3>Description of levels:</h3>
+        <p><img src="img/star.png" alt="Beginner" title="Beginner"/><span>&nbsp;-&nbsp;choose the &laquo;Beginner&raquo; if you
+            have some theoretical knowledge.</span></p>
+        <p><img src="img/star2.png" alt="Intermediate" title="Intermediate"/><span>&nbsp;-&nbsp;choose &laquo;Intermediate&raquo; if you have good theoretical knowledge and practical skills.</span></p>
+        <p><img src="img/star3.png" alt="Advanced" title="Advanced"/><span>&nbsp;-&nbsp;choose &laquo;Advanced&raquo; if you have excellent theoretical knowledge, have practical skills and work experience more than 1&nbsp;year.</span></p>
+        <p><img src="img/star4.png" alt="Expert" title="Expert"/><span>&nbsp;-&nbsp;choose &laquo;Expert&raquo; if you have advanced theoretical knowledge, have excellent practical skills, work experience is more than 3&nbsp;years and completed at least 2&nbsp;serious projects with a key requirement for this skill.</span></p>
+        <p><img src="img/star5.png" alt="Godlike" title="Godlike"/><span> - choose &laquo;Godlike&raquo; if you excellently possess
+        theoretical and practical skills, have more than 10&nbsp;years of experience, completed more than 10&nbsp;serious projects with a key requirement for this skill, have experience in developing a world-famous project.</span></p>
+    </div>
+</section>
+
+<footer class="footer">
+
+    <div class="footer__social">
+    <a href="https://www.facebook.com/gena.yepifanov"><div class="footer__social-fb-logo"></div></a>
+    <a href="https://www.linkedin.com/in/gennadiy-yepifanov-070637146/"><div class="footer__social-in-logo"></div></a>
+    </div>
+    <a href="#top"><img src="img/Top.png" alt="Top" title="Go to top" class="footer__top"/></a>
+
+    <h4 class="footer__header">Created by Gennadiy Yepifanov &copy;
+        <script>document.write(getCurrentYear());</script>
+    </h4>
+
+</footer>
+
+</body>
+</html>

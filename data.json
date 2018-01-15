@@ -1,0 +1,122 @@
+[
+  {
+    "id": "html5",
+    "name": "HTML5",
+    "direction": "Front-End",
+    "difficulty": "2",
+    "popularity": "High",
+    "year": "2014"
+  },
+  {
+    "id": "css3",
+    "name": "CSS3",
+    "direction": "Front-End",
+    "difficulty": "3",
+    "popularity": "High",
+    "year": "1999"
+  },
+  {
+    "id": "js",
+    "name": "JavaScript",
+    "direction": "Front-End",
+    "difficulty": "6",
+    "popularity": "High",
+    "year": "1995"
+  },
+  {
+    "id": "sql",
+    "name": "SQL",
+    "direction": "Database",
+    "difficulty": "6",
+    "popularity": "High",
+    "year": "1986"
+  },
+  {
+    "id": "csharp",
+    "name": "C#",
+    "direction": "Back-End",
+    "difficulty": "9",
+    "popularity": "High",
+    "year": "2000"
+  },
+  {
+    "id": "java",
+    "name": "Java",
+    "direction": "Back-End",
+    "difficulty": "10",
+    "popularity": "High",
+    "year": "1995"
+  },
+  {
+    "id": "cpp",
+    "name": "C++",
+    "direction": "Back-End",
+    "difficulty": "10",
+    "popularity": "Medium",
+    "year": "1983"
+  },
+  {
+    "id": "delphi",
+    "name": "Delphi",
+    "direction": "Back-End",
+    "difficulty": "7",
+    "popularity": "Low",
+    "year": "1995"
+  },
+  {
+    "id": "python",
+    "name": "Python",
+    "direction": "Back-End",
+    "difficulty": "7",
+    "popularity": "High",
+    "year": "1991"
+  },
+  {
+    "id": "ruby",
+    "name": "Ruby",
+    "direction": "Back-End",
+    "difficulty": "8",
+    "popularity": "High",
+    "year": "1995"
+  },
+  {
+    "id": "php",
+    "name": "PHP",
+    "direction": "Back-End",
+    "difficulty": "7",
+    "popularity": "High",
+    "year": "1995"
+  },
+  {
+    "id": "objc",
+    "name": "Objective-C",
+    "direction": "Back-End",
+    "difficulty": "8",
+    "popularity": "High",
+    "year": "1983"
+  },
+  {
+    "id": "swift",
+    "name": "Swift",
+    "direction": "Back-End",
+    "difficulty": "8",
+    "popularity": "High",
+    "year": "2014"
+  },
+  {
+    "id": "go",
+    "name": "Go",
+    "direction": "Back-End",
+    "difficulty": "7",
+    "popularity": "High",
+    "year": "2009"
+  },
+  {
+    "id": "c",
+    "name": "C",
+    "direction": "Back-End",
+    "difficulty": "9",
+    "popularity": "Medium",
+    "year": "1972"
+  }
+]

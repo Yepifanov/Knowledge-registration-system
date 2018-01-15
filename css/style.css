@@ -1,0 +1,404 @@
+/*@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i');*/
+
+@font-face {
+    font-family: "Source Sans Pro";
+    src: url(../fonts/SourceSansPro-Black.ttf);
+    font-style: normal;
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: "Source Sans Pro";
+    src: url(../fonts/SourceSansPro-SemiBold.ttf);
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Source Sans Pro";
+    src: url(../fonts/SourceSansPro-Regular.ttf);
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Source Sans Pro";
+    src: url(../fonts/SourceSansPro-Light.ttf);
+    font-style: normal;
+    font-weight: 300;
+}
+
+
+/*СТИЛИ ДЛЯ ХЕДЕРА*/
+.navigation {
+    background: #1B1B1E;
+    font-family: 'Source Sans Pro', Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.menu-list {
+    list-style-type: none;
+    margin: 0;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-list__item {
+    display: flex;
+    flex: 1 1 100%;
+    justify-content: space-around;
+    border-right: 1px solid #D8DBE2;
+    line-height: 25px;
+    color: #D8DBE2;
+}
+
+.menu-list__item:last-child {
+    border-right: none;
+}
+
+.menu-list__search-input {
+    background-color: transparent;
+    border: hidden;
+    border-bottom: 1px solid #D8DBE2;
+    outline: none;
+    color: #D8DBE2;
+    height: 25px;
+}
+
+.menu-list__dropdown {
+    display: none;
+    list-style-type: none;
+    background: #1B1B1E;
+    position: absolute;
+    width: 120px;
+    height: auto;
+    padding: 15px;
+}
+
+.menu-list__link {
+    color: #D8DBE2;
+    text-decoration: none;
+}
+
+.menu-list__submenu {
+    color: #D8DBE2;
+}
+
+.menu-list__item:first-child {
+    cursor: pointer;
+}
+
+.menu-list__item:first-child:hover,
+.menu-list__link:hover,
+.menu-list__submenu:hover {
+    color: #58A4B0;
+}
+/*КОНЕЦ СТИЛЕЙ ДЛЯ ХЕДЕРА*/
+
+
+/*СТИЛИ ДЛЯ СЛАЙДЕРА*/
+#slides {
+    position: relative;
+    height: 300px;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.slide {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 1;
+
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+}
+
+.showing {
+    opacity: 1;
+    z-index: 2;
+}
+
+.slide {
+    box-sizing: border-box; /**/
+    background-size: cover;
+    background: #333 no-repeat; /*фон на случай отсутствия картинки слайдера*/
+}
+
+@media screen and (max-width: 1600px) {
+    .slide:nth-of-type(1) {
+        background-image: url(../img/slider/cover1_1600.png);
+    }
+
+    .slide:nth-of-type(2) {
+        background-image: url(../img/slider/cover2_1600.png);
+    }
+
+    .slide:nth-of-type(3) {
+        background-image: url(../img/slider/cover3_1600.png);
+    }
+
+}
+
+@media screen and (max-width: 1250px) {
+    .slide:nth-of-type(1){
+        background-image: url(../img/slider/cover1_1250.png);
+    }
+
+
+    .slide:nth-of-type(2){
+        background-image: url(../img/slider/cover2_1250.png);
+    }
+
+
+    .slide:nth-of-type(3){
+        background-image: url(../img/slider/cover3_1250.png);
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .slide:nth-of-type(1){
+        background-image: url(../img/slider/cover1_1000.png);
+    }
+
+
+    .slide:nth-of-type(2){
+        background-image: url(../img/slider/cover2_1000.png);
+    }
+
+
+    .slide:nth-of-type(3){
+        background-image: url(../img/slider/cover3_1000.png);
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .slide:nth-of-type(1){
+        background-image: url(../img/slider/cover1_750.png);
+    }
+
+
+    .slide:nth-of-type(2){
+        background-image: url(../img/slider/cover2_750.png);
+    }
+
+
+    .slide:nth-of-type(3){
+        background-image: url(../img/slider/cover3_750.png);
+    }
+}
+/*КОНЕЦ СТИЛЕЙ ДЛЯ СЛАЙДЕРА*/
+
+
+/*СТИЛИ ДЛЯ ЛЕВОГО МЕНЮ*/
+.left-menu {
+    width: 250px;
+    background-color: #A9BCD0;
+    height: auto;
+    float: left;
+    padding-left: 20px;
+    color: #ffffff;
+    font-family: 'Source Sans Pro', Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 1.1em;
+}
+
+.criteria__name ~ label {
+    display: block;
+}
+
+.criteria {
+    margin: 0;
+}
+
+.wrap {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex: 1 1 100%; /*grow shrink basis - жадность, сжимаемость, размер*/
+}
+/*КОНЕЦ СТИЛЕЙ ДЛЯ ЛЕВОГО МЕНЮ*/
+
+
+
+/*СТИЛИ ГЛАВНОЙ ОБЛАСТИ*/
+.main {
+    background-color: #A9BCD0;
+    height: auto;
+    min-height: 900px;
+}
+
+h1 {
+    text-align: center;
+    background-color: #A9BCD0;
+    margin: 0;
+    line-height: 1.5;
+    color: #1B1B1E;
+    padding-top: 15px;
+    font-family: 'Source Sans Pro', Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 900;
+}
+
+.view {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    padding-top: 10px;
+    height: 30px;
+    background-color: #A9BCD0;
+    font-family: 'Source Sans Pro', Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.view li {
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+#tile {
+    font-weight: bold;
+}
+
+.main-wrap {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.skill {
+    margin: auto auto 25px;
+    background: url(../img/skills/skill_bg.png) no-repeat;
+}
+
+.description {
+    text-align: center;
+    height: 120px;
+    font-family: 'Source Sans Pro', Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: 600;
+}
+/*КОНЕЦ СТИЛЕЙ ГЛАВНОЙ ОБЛАСТИ*/
+
+
+/*СТИЛИ ДЛЯ КОНТАКТОВ*/
+.contacts {
+    background-image: url(../img/contact.jpg);
+    color: #ffffff;
+    background-size: cover;
+    font-family: 'Source Sans Pro', Arial, "Helvetica Neue", Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.4em;
+    font-weight: 400;
+    /*text-shadow: 3px 0 2px rgba(43,62,92,1);*/
+}
+
+.contacts__header,
+.about__header {
+    margin: 0;
+    text-align: center;
+    padding-top: 20px;
+    /*line-height: 1.5;*/
+}
+
+#map {
+    height: 250px;
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+.contacts__map-description {
+    text-align: center;
+}
+/*КОНЕЦ СТИЛЕЙ ДЛЯ КОНТАКТОВ*/
+
+
+/*СТИЛИ ДЛЯ 'ABOUT'*/
+.about {
+    background-image: url(../img/about.jpg);
+    color: #ffffff;
+    background-size: cover;
+    height: 720px;
+    font-family: 'Source Sans Pro', Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 750px) {
+    .about {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .about {
+        font-size: .85em;
+    }
+}
+
+.about__info {
+    text-align: center;
+    font-size: 1.4em;
+}
+
+.about__description {
+    margin-left: 20px;
+    line-height: 1.5;
+}
+/*КОНЕЦ СТИЛЕЙ ДЛЯ 'ABOUT'*/
+
+
+/*СТИЛИ ФУТЕРА*/
+.footer {
+    background-color: #1B1B1E;
+    color: #D8DBE2;
+    height: 100px;
+}
+
+.footer__header {
+    margin-bottom: 0;
+    text-align: center;
+    font-weight: 300;
+}
+
+.footer__top {
+    float: right;
+    margin: 0;
+}
+
+.footer__social {
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+    width: 100%;
+}
+
+.footer__social-fb-logo {
+    height: 35px;
+    width: 35px;
+    background: url(../img/social/Facebook-32.png) no-repeat;
+}
+
+.footer__social-fb-logo:hover {
+    background-image: url(../img/social/Facebook-32_hover.png);
+}
+
+.footer__social-in-logo {
+    height: 35px;
+    width: 35px;
+    background: url(../img/social/LinkedIn-32.png) no-repeat;
+}
+
+.footer__social-in-logo:hover {
+    background-image: url(../img/social/LinkedIn-32_hover.png);
+}
+/*КОНЕЦ СТИЛЕЙ ФУТЕРА*/
