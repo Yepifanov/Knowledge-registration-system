@@ -8,9 +8,9 @@ window.onload = function () {
     menuList.addEventListener("mouseover", function (event) { //обработчик события на выпадающее меню
         var target = event.target;
         if (target.className == "menu-list__item") {
-            var drop = target.getElementsByClassName("menu-list__dropdown");
+            var dropDown = target.getElementsByClassName("menu-list__dropdown");
             closeMenu();
-            drop[0].style.display = 'block'; // тот объект, на котором было события в массиве [0]
+            dropDown[0].style.display = 'block'; // тот объект, на котором было события в массиве [0]
         }
     });
 
@@ -18,15 +18,15 @@ window.onload = function () {
     document.addEventListener("mouseover", function (event) { //если курсор не над выпадающем меню - закрываем его
         var target = event.target;
 
-        if (target.className != 'menu-list__item' && target.className != 'menu-list__dropdown' && target.className != "menu-list__link" && target.className != "menu-list__submenu") {
+        if (target.className != 'menu-list__item' && target.className != 'menu-list__dropdown' && target.className != "menu-list__submenu") {
             closeMenu();
         }
     });
 
     function closeMenu() { //ф-я закрытия меню
-        var subm = document.getElementsByClassName('menu-list__dropdown');
-        for (var i = 0; i < subm.length; i++) {
-            subm[i].style.display = "none";
+        var dropDown = document.getElementsByClassName('menu-list__dropdown');
+        for (var i = 0; i < dropDown.length; i++) {
+            dropDown[i].style.display = "none";
         }
     }
 
@@ -120,9 +120,7 @@ window.onload = function () {
     var xhr = new XMLHttpRequest();     //получаем джсон-файл асинхронно
     xhr.open("GET", "data.json");
     xhr.onload = function (event) {
-        var response = JSON.parse(event.target.responseText);
-        skills = response;              //сохраняем ответ в массив skills
-
+        skills = JSON.parse(event.target.responseText);//сохраняем ответ в массив skills
         showSkills(skills, true);
     };
     xhr.onerror = function (event) {    //обрабатываем ошибку получения джсона
