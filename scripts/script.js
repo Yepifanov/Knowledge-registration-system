@@ -5,8 +5,10 @@
 window.onload = function () {
 
     var menuList = document.getElementById('nav1');
+
     menuList.addEventListener("mouseover", function (event) { //обработчик события на выпадающее меню
         var target = event.target;
+
         if (target.className == "menu-list__item") {
             var dropDown = target.getElementsByClassName("menu-list__dropdown");
             closeMenu();
@@ -66,12 +68,12 @@ window.onload = function () {
 
     function allCheckView () { //вернуть checked по умолчанию
         var allCheckView = document.getElementsByClassName("allCheck");
-        for (i = 0; i < allCheckView.length; i++) {
+        for (var i = 0; i < allCheckView.length; i++) {
             allCheckView[i].checked = true;
         }
     }
 
-    allSkills.addEventListener("click", function () {
+    allSkills.addEventListener("click", function () { //показываем все скиллы, без фильтрации
         showSkills(skills, false);
         allCheckView();
     });
@@ -81,7 +83,7 @@ window.onload = function () {
         allCheckView();
         mainWrapper.innerHTML = ''; //очистка поля
 
-        for (i = 0; i < skills.length; i++) { // переделать, избежать копипасту
+        for (var i = 0; i < skills.length; i++) { // переделать, избежать копипасту
             var skill = skills[i];
 
             if (skill.rate > 0) {       //рисуем скиллы только с рейтингом
@@ -114,11 +116,11 @@ window.onload = function () {
         database: true
     };
 
-    //Тут храняться все скиллы(картинка+описание+звезды)
+    //Тут хранятся все скиллы(картинка+описание+звезды)
     var skills = [];
 
-    var xhr = new XMLHttpRequest();     //получаем джсон-файл асинхронно
-    xhr.open("GET", "data.json");
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "data.json");   //получаем джсон-файл асинхронно
     xhr.onload = function (event) {
         skills = JSON.parse(event.target.responseText);//сохраняем ответ в массив skills
         showSkills(skills, true);
@@ -132,7 +134,7 @@ window.onload = function () {
     function showSkills(skills, useFilter) {        //useFilter добавлен для отобр. allSkills & mySkills
         mainWrapper.innerHTML = '';                 //очистка поля
 
-        for (i = 0; i < skills.length; i++) {
+        for (var i = 0; i < skills.length; i++) {
             var skill = skills[i];
 
             if (useFilter && !canShowSkill(skill)) {   //проверяем каждый скилл на возможность показа
@@ -220,6 +222,7 @@ window.onload = function () {
     function generateSkillView(skill) {
         var skillNode = document.createElement('div');
         skillNode.classList.add('skill');
+
         if (skill.direction === 'Back-End') {
             skillNode.classList.add('back-block');
         } else if (skill.direction === 'Front-End') {
@@ -264,8 +267,8 @@ window.onload = function () {
     function generateSkillAttributeView(name, className, value) {
         var attrNode = document.createElement('span');
         var nameNode = document.createElement('span');
-        nameNode.innerText = name + ': ';
         var valueNode = document.createElement('span');
+        nameNode.innerText = name + ': ';
         valueNode.className = className;
         valueNode.innerText = value;
         attrNode.appendChild(nameNode);
@@ -277,7 +280,7 @@ window.onload = function () {
 
     //обработчик на смену фильтрации
     var allFiltrations = document.getElementsByClassName('filtration');
-    for (i = 0; i < allFiltrations.length; i++) {
+    for (var i = 0; i < allFiltrations.length; i++) {
         var filtration = allFiltrations[i];
         filtration.addEventListener('change', createFiltrationAndApply);
     }
@@ -290,9 +293,9 @@ window.onload = function () {
         var filtrationName = target.name;
 
         if (target.type === 'checkbox') {
-            filterParams[filtrationName] = target.checked;
+            filterParams[filtrationName] = target.checked; // frontend: true
         } else {
-            filterParams[filtrationName] = target.value;
+            filterParams[filtrationName] = target.value; // level: easy
         }
 
         showSkills(skills, true);
@@ -307,7 +310,7 @@ window.onload = function () {
 
     function nextSlide(){
         slides[currentSlide].className = 'slide';
-        currentSlide = (currentSlide+1)%slides.length; //если слайд последний - возвр. на первый 5%5=0
+        currentSlide = (currentSlide + 1) % slides.length; //если слайд последний - возвр. на первый 5%5=0
         slides[currentSlide].className = 'slide showing';
     }
 };
